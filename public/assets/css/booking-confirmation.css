@@ -1,0 +1,105 @@
+/*--------------------------------------------------------------
+# Booking Confirmation Page
+--------------------------------------------------------------*/
+.booking-confirmation {
+  color: var(--default-color);
+  background-color: var(--background-color);
+}
+
+.booking-confirmation .section {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.booking-confirmation .confirmation-icon {
+  margin-bottom: 2rem;
+}
+
+.booking-confirmation h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 1.5rem;
+}
+
+.booking-confirmation .lead {
+  font-size: 1.25rem;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+}
+
+.booking-confirmation .confirmation-details {
+  background: var(--surface-color);
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  text-align: left;
+}
+
+.booking-confirmation .confirmation-details h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+}
+
+.booking-confirmation .confirmation-details ol {
+  padding-left: 1.5rem;
+}
+
+.booking-confirmation .confirmation-details li {
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+.booking-confirmation .btn {
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  min-width: 180px;
+  margin: 0 0.5rem;
+}
+
+.booking-confirmation .btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.booking-confirmation .btn-primary:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.booking-confirmation .btn-outline-secondary {
+  border-color: color-mix(in srgb, var(--default-color), transparent 70%);
+  color: var(--default-color);
+}
+
+.booking-confirmation .btn-outline-secondary:hover {
+  background-color: color-mix(in srgb, var(--default-color), transparent 90%);
+  border-color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+@media (max-width: 768px) {
+  .booking-confirmation .section {
+    padding: 80px 0;
+  }
+  
+  .booking-confirmation h1 {
+    font-size: 2rem;
+  }
+  
+  .booking-confirmation .lead {
+    font-size: 1.1rem;
+  }
+  
+  .booking-confirmation .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .booking-confirmation .btn:last-child {
+    margin-bottom: 0;
+  }
+}

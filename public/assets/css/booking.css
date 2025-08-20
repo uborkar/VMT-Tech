@@ -1,0 +1,149 @@
+/*--------------------------------------------------------------
+# Booking Page
+--------------------------------------------------------------*/
+.booking-page {
+  color: var(--default-color);
+  background-color: var(--background-color);
+}
+
+.booking-page .section {
+  padding: 80px 0;
+}
+
+.booking-page .booking-header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.booking-page .booking-header h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+}
+
+.booking-page .booking-header .lead {
+  font-size: 1.25rem;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.booking-page .form-section {
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+  background: var(--surface-color);
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+}
+
+.booking-page .section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.booking-page .section-title:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+}
+
+.booking-page .form-label {
+  font-weight: 500;
+  color: var(--heading-color);
+  margin-bottom: 0.5rem;
+}
+
+.booking-page .form-control {
+  padding: 0.75rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+  border-radius: 6px;
+  background-color: var(--background-color);
+  transition: all 0.3s;
+}
+
+.booking-page .form-control:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--accent-color), transparent 80%);
+}
+
+.booking-page .documents-checklist {
+  padding: 1rem;
+  background: color-mix(in srgb, var(--background-color), transparent 50%);
+  border-radius: 8px;
+}
+
+.booking-page .form-check {
+  margin-bottom: 0.75rem;
+}
+
+.booking-page .form-check-input {
+  width: 1.2em;
+  height: 1.2em;
+  margin-top: 0.15em;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.booking-page .form-check-input:checked {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.booking-page .form-check-label {
+  margin-left: 0.5rem;
+}
+
+.booking-page .payment-options {
+  padding: 1.5rem;
+  background: color-mix(in srgb, var(--background-color), transparent 50%);
+  border-radius: 8px;
+}
+
+.booking-page .btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  padding: 0.75rem 2.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+}
+
+.booking-page .btn-primary:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  transform: translateY(-2px);
+}
+
+.booking-page .btn-outline-secondary {
+  border-color: color-mix(in srgb, var(--default-color), transparent 70%);
+  color: var(--default-color);
+}
+
+.booking-page .btn-outline-secondary:hover {
+  background-color: color-mix(in srgb, var(--default-color), transparent 90%);
+  border-color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+@media (max-width: 768px) {
+  .booking-page .section {
+    padding: 60px 0;
+  }
+  
+  .booking-page .booking-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .booking-page .booking-header .lead {
+    font-size: 1.1rem;
+  }
+  
+  .booking-page .form-section {
+    padding: 1.5rem;
+  }
+}

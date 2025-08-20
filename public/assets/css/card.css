@@ -1,0 +1,397 @@
+:root {
+  --primary-color: #f07f43;
+  --secondary-color: #f8a477;
+  --accent-color: #f07f43;
+  --dark-color: #2d3748;
+  --light-color: #f8fafc;
+  --text-color: #4a5568;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Flip Card Container */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 480px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+/* Flip Card Inner Container */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+  box-shadow: var(--shadow);
+  border-radius: 15px;
+}
+
+/* Flip Animation on Hover */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and Back Card Styles */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* Front Card */
+.flip-card-front {
+  background-color: #fff;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Back Card */
+.flip-card-back {
+  position: absolute;
+  inset: 0; /* shorthand for top: 0; right: 0; bottom: 0; left: 0 */
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 15px;
+  text-align: center;
+  box-sizing: border-box;
+  overflow: hidden; /* 👈 Prevent scrollbars */
+}
+
+
+
+/* Card Icon Styles */
+.card-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin: 5px;
+  transition: var(--transition);
+}
+
+.flip-card:hover .card-icon {
+  transform: scale(1.1);
+  color: var(--secondary-color);
+}
+
+.back-icon {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 25px;
+  transition: var(--transition);
+}
+
+.flip-card:hover .back-icon {
+  transform: scale(1.1);
+}
+
+/* Pricing Card Styles */
+.plan {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.plan .inner {
+  flex: 1;
+  background-color: var(--light-color);
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  padding: 20px;
+}
+
+.flip-card:hover .plan .inner {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.plan .pricing {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(240, 127, 67, 0.1);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 8px 18px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.flip-card:hover .plan .pricing {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.plan .pricing small {
+  color: inherit;
+  opacity: 0.8;
+  font-size: 0.8em;
+  margin-left: 5px;
+}
+
+.plan .title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--dark-color);
+  margin: 5px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.flip-card:hover .plan .title {
+  color: var(--primary-color);
+}
+
+.plan .info {
+  font-weight: 600;
+  color: var(--dark-color);
+  text-align: center;
+  margin: 5px;
+  font-size: 1rem;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.plan .features {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.plan .features ul {
+  padding: 5px;
+  margin: 0;
+}
+.plan .features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #edf2f7;
+  transition: var(--transition);
+}
+
+.plan .features li:hover {
+  transform: translateX(5px);
+}
+
+.plan .features li:last-child {
+  border-bottom: none;
+}
+
+.plan .features .icon {
+  color: var(--accent-color);
+  font-size: 1rem;
+  min-width: 20px;
+}
+
+.plan .action {
+  margin-top: auto;
+}
+
+.plan .button {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.plan .button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(240, 127, 67, 0.4);
+  background-color: var(--secondary-color);
+}
+
+/* Back Card Content Styles */
+.back-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: white;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.back-description {
+  margin-bottom: 30px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: white;
+  font-weight: 300;
+}
+.back-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 220px; /* Slightly increased for better fit */
+  margin-top: auto; /* Push to bottom if space allows */
+  margin-bottom: 20px;
+}
+
+
+.back-button {
+  width: 100%; /* Make buttons full width of container */
+  background-color: white;
+  color: var(--primary-color);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.9rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  text-decoration: none;
+}
+
+.back-button:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .flip-card {
+    height: auto;
+    min-height: 480px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .flip-card-inner {
+    height: auto;
+    min-height: 480px;
+  }
+
+  .plan .inner {
+    padding: 15px;
+  }
+ 
+}
+
+@media (max-width: 480px) {
+  .cards-container {
+    padding: 10px;
+  }
+
+  .flip-card-back {
+    padding: 20px 15px;
+  }
+
+  .flip-card {
+    height: auto;
+    min-height: 420px;
+  }
+
+  .plan .inner {
+    padding: 15px;
+  }
+
+  .plan .title {
+    font-size: 1.3rem;
+  }
+
+  .back-title {
+    font-size: 1.5rem;
+  }
+
+  .back-description {
+    font-size: 25px;
+  }
+
+  .back-button {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+   .back-buttons {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .back-button {
+    font-size: 0.85rem;
+    padding: 10px 16px;
+  }
+}
+/* Floating animation for cards */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.flip-card {
+  animation: float 6s ease-in-out infinite;
+}
+
+.flip-card:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.flip-card:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.flip-card:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+.flip-card:nth-child(5) {
+  animation-delay: 2s;
+}
+
+.flip-card:nth-child(6) {
+  animation-delay: 2.5s;
+}

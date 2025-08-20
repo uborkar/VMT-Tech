@@ -1,0 +1,226 @@
+/*--------------------------------------------------------------
+# Service Details Page (Themed with #F07F43)
+--------------------------------------------------------------*/
+
+/* 🎨 Theme Variables */
+:root {
+  --accent-color: #F07F43;   /* Primary brand color */
+  --heading-color: #222;     /* Headings */
+  --default-color: #555;     /* Body text */
+  --background-color: #fff;  /* Page background */
+  --surface-color: #f9f9f9;  /* Cards, boxes */
+  --contrast-color: #fff;    /* Text on accent */
+}
+
+/* 🌐 Base */
+.service-detail-page {
+  color: var(--default-color);
+  background-color: var(--background-color);
+}
+
+.service-detail-page .section {
+  padding: 80px 0;
+}
+
+/* 📝 Headings */
+.service-detail-page h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--heading-color);
+}
+
+.service-detail-page h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.service-detail-page h3:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+}
+
+/* 💰 Price Badge */
+.service-detail-page .price-badge {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.service-detail-page .price {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+}
+
+.service-detail-page .processing-time {
+  font-size: 1rem;
+  color: var(--default-color);
+}
+
+/* 📃 Documents & Benefits */
+.service-detail-page .documents-list,
+.service-detail-page .benefits-list {
+  list-style: none;
+  padding: 0;
+}
+
+.service-detail-page .documents-list li,
+.service-detail-page .benefits-list li {
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.service-detail-page .documents-list i {
+  color: var(--accent-color);
+  margin-right: 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.service-detail-page .benefits-list i {
+  color: var(--accent-color);
+  margin-right: 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+/* 🔢 Procedure Steps */
+.service-detail-page .procedure-steps {
+  list-style: none;
+  padding: 0;
+  counter-reset: step-counter;
+}
+
+.service-detail-page .procedure-steps li {
+  position: relative;
+  padding-left: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-detail-page .procedure-steps .step-number {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  counter-increment: step-counter;
+}
+
+.service-detail-page .procedure-steps .step-number:before {
+  content: counter(step-counter);
+}
+
+/* 🧩 Sidebar */
+.service-detail-page .service-sidebar {
+  background: var(--surface-color);
+  border-radius: 10px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  position: sticky;
+  top: 100px; /* ✅ prevents overlap with navbar */
+}
+
+.service-detail-page .service-sidebar .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--heading-color);
+}
+
+.service-detail-page .price-box {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.service-detail-page .price-box .price {
+  font-size: 2rem;
+  font-weight: 700;
+  display: block;
+  color: var(--accent-color);
+}
+
+.service-detail-page .price-box .price-note {
+  font-size: 0.875rem;
+  color: #888;
+}
+
+/* 🔘 Buttons */
+.service-detail-page .btn-block,
+.service-detail-page .btn {
+  width: 100%;
+  padding: 0.75rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.service-detail-page .btn:hover {
+  background-color: #d9682d;
+}
+
+/* 🌟 Highlights */
+.service-detail-page .highlight-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.service-detail-page .highlight-item:last-child {
+  border-bottom: none;
+}
+
+.service-detail-page .highlight-item i {
+  color: var(--accent-color);
+  margin-right: 0.75rem;
+  font-size: 1.25rem;
+}
+
+/* 📞 Support Box */
+.service-detail-page .support-box {
+  background: var(--surface-color);
+  border-radius: 10px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+}
+
+.service-detail-page .support-box .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-detail-page .support-contact .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* 📱 Mobile Fix */
+@media (max-width: 992px) {
+  .service-detail-page .service-sidebar {
+    margin-top: 3rem;
+    position: static;
+  }
+}
