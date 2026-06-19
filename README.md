@@ -77,3 +77,9 @@ You are free to use, modify, and distribute with proper attribution.
 
 At **VMT-Tech**, we believe legal documentation should be **simple, quick, and affordable**.  
 Our mission is to empower individuals and businesses with seamless digital solutions for all their legal needs.  
+
+---
+
+## Author
+
+Umair Mazhar Borkar
